@@ -1,0 +1,1 @@
+RAILS_ENV=production rails server -b 0.0.0.0 -p 8081
