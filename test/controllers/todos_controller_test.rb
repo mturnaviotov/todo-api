@@ -3,6 +3,7 @@ require 'test_helper'
 class TodosControllerTest < ActionDispatch::IntegrationTest
   setup do
     @todo = todos(:one)
+    @fail = todos(:failed)
   end
 
   test "should get index" do
@@ -16,6 +17,14 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response 201
+  end
+
+  test "should fail todo without comment" do
+#    assert_difference('Todo.count') do
+      post todos_url, params: { todo: {date_end: @fail.date_end, done: @fail.done, priority: @fail.priority } }, as: :json
+#    end
+
+    assert_response 422
   end
 
   test "should show todo" do

@@ -6,8 +6,7 @@ one:
   date_end: 2017-01-02
   priority: 1
 
-two:
+failed:
   done: false
-  comment: MyString
   date_end: 2017-01-02
   priority: 1
