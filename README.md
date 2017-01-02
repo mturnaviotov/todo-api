@@ -5,9 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.4
 
-* System dependencies
+* System dependencies:
+  - SQLite
 
 * Configuration
 
@@ -15,10 +16,30 @@ Things you may want to cover:
 
 * Database initialization
 
+  `rake db:migrate`
+
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+  `rake test`
 
 * Deployment instructions
+  - Use git clone url to clone repo in your preferred place
+  - Use start_app_dev or start_app_prod scripts to run app
+  - You can use included nginx virtual host config to configure it as proxy for api and web parts
 
-* ...
+* Bash script with API using examples
+  ```
+url_base='http://localhost:8081/api/v1/'
+url_part='todos'
+
+# New Todo create
+# curl -XPOST -sd '{"todo":{"comment":"My First Todo","done":false}}' \
+# -H 'Content-Type:application/json'  "${url_base}${url_part}"
+
+# Get All data
+curl -H 'Content-Type:application/json' "${url_base}${url_part}"
+
+# Delete existed Todo item
+# deleteitem='1'
+# curl -XDELETE -sd -H 'Content-Type:application/json'  "${url_base}${url_part}/${deleteitem}"
+```
