@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  done: false
+  comment: MyString
+  date_end: 2017-01-02
+  priority: 1
+
+two:
+  done: false
+  comment: MyString
+  date_end: 2017-01-02
+  priority: 1
