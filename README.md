@@ -43,3 +43,9 @@ curl -H 'Content-Type:application/json' "${url_base}${url_part}"
 # deleteitem='1'
 # curl -XDELETE -sd -H 'Content-Type:application/json'  "${url_base}${url_part}/${deleteitem}"
 ```
+
+* Create app
+  - rails new --api todo-api
+  - rails g scaffold Todo done:boolean comment:string date_end:date priority:integer
+  - rake db:migrate
+  - rake test
